@@ -4,25 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Be My Valentine</title>
-    <link rel="stylesheet" href="css/valentine.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6; /* Soft pink background */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        #valentineQuestion {
+            font-size: 24px;
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+        .answerButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        button[onclick*="thankyou.html"] {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #noButton {
+            background-color: #888;
+            color: white;
+        }
+        .responsive {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div id="valentineQuestion"><b>Just like the emoji, it would be eyekonic if you were my valentine:)</b></div>
-        <div class="buttons">
-            <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
-            <button class="answerButton" id="noButton">Hands Off Gabriela</button>
-        </div>
-        <br />
-        <img src="please.png" alt="cat asking question" class="responsive" style="max-height: 400px; width: auto;" />
+    <div id="valentineQuestion"><b>Just like the emoji, it would be eyekonic if you were my valentine:)</b></div>
+    <div class="buttons">
+        <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
+        <button class="answerButton" id="noButton">Hands Off Gabriela</button>
     </div>
+    <br />
+    <img src="please.png" alt="cat asking question" class="responsive" width="150" />
 
     <script>
-        document.getElementById("noButton").addEventListener("click", function () {
-            var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
-            var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
-            yesButton.style.fontSize = (currentFontSize + 10) + "px"; 
-        });
+      document.getElementById("noButton").addEventListener("click", function () {
+          var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
+          var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+          yesButton.style.fontSize = (currentFontSize + 10) + "px"; 
+      });
     </script>
 </body>
 </html>
